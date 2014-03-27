@@ -1,0 +1,25 @@
+body{
+ 	font-family: "Source Sans Pro";
+}
+
+#menu {
+	width: 200px;
+}
+
+#menu .pure-menu-selected,
+#menu .pure-menu-heading {
+	background: none;
+}
+
+#main h1{
+	text-transform: capitalize;
+}
+
+#main .content{
+	padding-top: 50px;
+}
+
+table{
+	position: relative;
+	margin: 0 auto;
+}

@@ -1,0 +1,16 @@
+extends ../layout.jade
+
+block content
+	form(name="create", action="/api/create", method="post").pure-form.pure-form-aligned
+		fieldset
+
+			div(style="text-align:right").pure-control-group
+				label Nome
+				input(id="nome", type="text", placeholder="Nome")
+
+			div(style="text-align:right").pure-control-group
+				label Rota
+				input(id="rota", type="number", placeholder="Rota")
+
+			div(style="text-align:right").pure-controls
+				button#save.pure-button.pure-button-primary Salvar

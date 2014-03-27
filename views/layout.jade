@@ -1,0 +1,37 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.4.2/pure-min.css')
+		link(rel='stylesheet', href='http://purecss.io/css/layouts/side-menu.css')
+		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600')
+		link(rel='stylesheet', href='/css/style.css')
+
+	body
+		div#layout
+			div#menu
+				div.header
+					h2 Logistic Network
+
+				div.pure-menu.pure-menu-open
+					a.pure-menu-heading CRUD
+					ul
+						li
+							a(href="/form/create") Create
+						li
+							a(href="/form/list") List
+						li
+							a(href="#") Update
+						li
+							a(href="#") Delete
+						li.pure-menu-heading Map Routes
+						li
+							a(href="#") Generate
+
+			div#main
+
+				div.header
+					h1= title
+				div.content
+					block content
+					script(src='/js/api.js')
