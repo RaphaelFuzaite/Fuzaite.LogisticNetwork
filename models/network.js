@@ -21,7 +21,6 @@ var _model = mongoose.model('Network', networkSchema);
 var create = function(req, res, data) {
 	var model = new _model(data);
 
-
 	model.save(function(err, data){
 		if (err) {
 			console.log('Erro: ', err);
@@ -29,8 +28,8 @@ var create = function(req, res, data) {
 
 		console.log('Network added: ', data);
 		makeResponse(res, data);
-	})
-}
+	});
+};
 
 var find = function(req, res){
   _model.find(function (err, networks) {
@@ -40,7 +39,7 @@ var find = function(req, res){
         makeResponse(res, networks);
     }
   });
-}
+};
 
 var update = function(req, res, query, mod){
   _model.update(query, mod, function(err, network) {
@@ -51,7 +50,7 @@ var update = function(req, res, query, mod){
       makeResponse(res, network);
     }
   });
-} 
+} ;
 
 var get = function(req, res, query){
   _model.findOne(query, function (err, networks) {
@@ -61,8 +60,8 @@ var get = function(req, res, query){
       console.log(networks);
       makeResponse(res, networks);
     }
-  })
-}
+  });
+};
 
 var remove = function(req, res, query){
   _model.remove(query, function(err, network) {
@@ -73,13 +72,13 @@ var remove = function(req, res, query){
       makeResponse(res, network);
     }
   });
-}
+};
 
 var makeResponse = function(res, data){
   res.writeHead(200, {"Content-Type": "text/plain"});
   res.write(JSON.stringify(data));
   res.end();
-}
+};
 
 exports.create = create;
 exports.find = find;
